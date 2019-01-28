@@ -9,10 +9,17 @@ $ git clone git@github.com:gpenverne/fuck-make.git
 $ sudo cp ./fuck-make/binaries/fmake /usr/bin/fmake
 ```
 
+### Or install using apt-get
+```bash
+$ echo "deb https://github.com/gpenverne/fuck-make/binaries ./" | sudo tee --append /etc/apt/sources.list.d/fuck-make
+$ sudo apt-get update
+$ sudo apt-get install fuck-make
+```
+
 ### Or install using .deb file
 ```bash
-$ git clone git@github.com:gpenverne/fuck-make.git
-$ sudo dpkg -i ./fuck-make/binaries/fmake.deb
+$ wget https://github.com/gpenverne/fuck-make/raw/master/binaries/fmake.deb
+$ sudo dpkg -i ./fmake.deb && rm ./fmake.deb
 ```
 
 ## Usage
