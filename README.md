@@ -5,8 +5,8 @@ Override makefile using custom makefile.
 ## Install
 ### Copy the fmake binary:
 ```bash
-$ git clone git@github.com:gpenverne/fuck-make.git
-$ sudo cp ./fuck-make/binaries/fmake /usr/bin/fmake
+$ wget https://github.com/gpenverne/fuck-make/raw/master/binaries/fmake
+$ sudo mv ./fmake /usr/bin/fmake
 ```
 
 ### Or install using apt-get
