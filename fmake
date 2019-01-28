@@ -1,0 +1,12 @@
+!#/bin/sh
+
+CURRENT_DIR=$(pwd)
+MAKEFILE_OVERRIDE_FILE="$CURRENT_DIR/.makefile.override"
+if [[ ! -f "$MAKEFILE_OVERRIDE_FILE" ]]; then
+    $(which git) config --global core.excludesfile '~/.gitignore'
+    echo "\nfmake" >> ~/.gitignore
+    echo "\nmakefile.override" >> ~/.gitignore
+    echo "include Makefile" > $MAKEFILE_OVERRIDE_FILE
+fi
+
+$(which make) -f $MAKEFILE_OVERRIDE_FILE $1
