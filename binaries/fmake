@@ -1,0 +1,19 @@
+#!/bin/bash
+
+CURRENT_DIR=$(pwd)
+MAKEFILE_OVERRIDE_FILENAME=".makefile.override"
+MAKEFILE_OVERRIDE_FILE="$CURRENT_DIR/$MAKEFILE_OVERRIDE_FILENAME"
+if [[ ! -f "$MAKEFILE_OVERRIDE_FILE" ]]; then
+    GLOBAL_GITIGNORE=$(git config --get core.excludesfile)
+    if [[ "$GLOBAL_GITIGNORE" == "" ]]; then
+        git config --global core.excludesfile "$GLOBAL_GITIGNORE"
+    fi
+    if grep -q "$MAKEFILE_OVERRIDE_FILENAME" "$GLOBAL_GITIGNORE"; then
+        echo "fmake already in gitignore"
+    else
+        echo "$MAKEFILE_OVERRIDE_FILENAME" >> "$GLOBAL_GITIGNORE"
+        echo "include Makefile" > "$MAKEFILE_OVERRIDE_FILE"
+    fi
+fi
+
+$(which make) -f $MAKEFILE_OVERRIDE_FILE $1
