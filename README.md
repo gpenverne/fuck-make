@@ -6,5 +6,5 @@ Override makefile using custom makefile.
 ``bash
 $ git clone git@github.com:gpenverne/fuck-make.git
 $ cd fuck-make
-$ cp fmake /usr/bin/fmake
+$ sudo cp fmake /usr/bin/fmake
 ``
