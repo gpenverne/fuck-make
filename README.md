@@ -3,10 +3,16 @@ Override makefile using custom makefile.
 
 
 ## Install
+### Copy the fmake binary:
 ```bash
 $ git clone git@github.com:gpenverne/fuck-make.git
-$ cd fuck-make
-$ sudo cp fmake /usr/bin/fmake
+$ sudo cp ./fuck-make/binaries/fmake /usr/bin/fmake
+```
+
+### Or install using .deb file
+```bash
+$ git clone git@github.com:gpenverne/fuck-make.git
+$ sudo dpkg -i ./fuck-make/binaries/fmake.deb
 ```
 
 ## Usage
